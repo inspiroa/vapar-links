@@ -15,6 +15,39 @@
 </div>
 <div class="bg"></div>
 <!-- partial -->
+<p id="msg"></p>
+<script>
+  function changeText(currentOS) {
+    const elem = document.getElementById("msg");
+    elem.innerText = currentOS;
+  }
+
+  function redirectToApp() {
+    const userAgent =
+      navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+      changeText("android, открытие приложения, если нет, то в гугл плей");
+      const androidIntentURL =
+        "intent://com.getmeback.vshop#Intent;scheme=http;package=com.getmeback.vshop;end";
+
+      window.location.href = androidIntentURL;
+
+      setTimeout(() => {
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.getmeback.vshop";
+      }, 1500);
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      changeText("ios, переход в wallet");
+      window.location.href = "https://vshop.getmeback.ru/wallet";
+    } else {
+      changeText("не распознано, переход на таплинк");
+    }
+  }
+
+  // Call the function on page load
+  redirectToApp();
+</script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js'></script>
   <script  src="./index.js"></script>
 
