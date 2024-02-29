@@ -57,3 +57,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#msg {
+  color: #fff;
+}
