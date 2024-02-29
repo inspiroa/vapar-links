@@ -1,1 +1,17 @@
-start
+{
+  "name": "vapar-links",
+  "version": "1.0.0",
+  "description": "vapar shop links",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "author": "danila yudin",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.57.0",
+    "serve": "^14.2.1"
+  }
+}
